@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Megrim&display=swap");
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 160px;
+  background: linear-gradient(180deg, #99bc85 0%, #e8f5e9 100%);
+}
+
+.logo {
+  font-family: Megrim, sans-serif;
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.loginSection {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 44px 20px 20px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 16px;
+  padding: 16px 0 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.231; /* 小数点２桁以上なので確認必要 */
+}
+
+.input {
+  padding: 13.5px 12px;
+  font-size: 14px;
+  line-height: 1.215; /* 小数点２桁以上なので確認必要 */
+}
+
+.loginButton {
+  text-align: center;
+  max-width: 287px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 15px;
+  border-radius: 999px;
+  background: #99BC85;
+  box-shadow: 0px 10px 24px -10px #99BC8533;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.link {
+  text-align: center;
+  color: #6B7280;
+  font-size: 13px;
+  line-height: 1.231; /* 小数点２桁以上なので確認必要 */
+}
+
+.footer {
+  width: 100%;
+  margin-top: auto;
+}
+
+.footerNav {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.footerLink {
+  color: #6B7280;
+  font-size: 12px;
+  line-height: 1.167; /* 小数点２桁以上なので確認必要 */
+}
