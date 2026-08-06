@@ -8,12 +8,18 @@ import { PostOptionsMenu } from "./PostOptionsMenu";
 
 type PostItemProps = {
   post: Post;
+  onDeleteClick: () => void;
 };
 
-export const PostItem = ({ post }: PostItemProps) => {
+export const PostItem = ({ post, onDeleteClick, }: PostItemProps) => {
   const [isOptionsOpen, setIsOptionsOpen] = useState(false);
   const optionsAreaRef = useRef<HTMLDivElement>(null);
   const optionButtonRef = useRef<HTMLButtonElement>(null);
+
+  const handleDeleteClick = () => {
+    setIsOptionsOpen(false);
+    onDeleteClick();
+  };
 
   useEffect(() => {
     if (!isOptionsOpen) return;
@@ -57,7 +63,7 @@ export const PostItem = ({ post }: PostItemProps) => {
               <circle cx="18" cy="2" r="2" fill="#9CA3AF" />
             </svg>
           </button>
-          {isOptionsOpen && <PostOptionsMenu />}
+          {isOptionsOpen && <PostOptionsMenu onDeleteClick={handleDeleteClick} />}
         </div>
       </header>
       <p className={styles.postText}>{post.content}</p>
