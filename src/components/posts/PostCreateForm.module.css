@@ -18,11 +18,17 @@
 .postButton {
   padding: 8px 16px;
   border-radius: 999px;
-  background-color: #E5E7EB;
-  color: #9CA3AF;
+  background-color: #99BC85;
+  color: #ffffff;
   font-size: 15px;
   font-weight: 700;
   line-height: 1.2;
+}
+
+.postButton:disabled {
+  background-color: #E5E7ED;
+  color: #9CA3AF;
+  cursor: not-allowed;
 }
 
 .content {
@@ -46,6 +52,7 @@
 .textarea {
   width: 100%;
   min-height: 260px;
+  padding: 16px;
   font-size: 16px;
   line-height: 1.4;
   resize: none;
