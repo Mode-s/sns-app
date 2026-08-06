@@ -5,9 +5,10 @@ import styles from "./PostDeleteModal.module.css";
 
 type PostDeleteModalProps = {
   onCancel: () => void;
+  onDelete: () => void;
 };
 
-export const PostDeleteModal = ({ onCancel }: PostDeleteModalProps) => {
+export const PostDeleteModal = ({ onCancel, onDelete }: PostDeleteModalProps) => {
   const cancelButtonRef = useRef<HTMLButtonElement>(null);
   const deleteButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -46,7 +47,7 @@ export const PostDeleteModal = ({ onCancel }: PostDeleteModalProps) => {
         <p className={styles.text} id="dialog-delete-title">このポストを削除しますか？</p>
         <div className={styles.buttons}>
           <button className={styles.cancelButton} type="button" onClick={onCancel} ref={cancelButtonRef}>キャンセル</button>
-          <button className={styles.deleteButton} type="button" ref={deleteButtonRef}>削除</button>
+          <button className={styles.deleteButton} type="button" onClick={onDelete} ref={deleteButtonRef}>削除</button>
         </div>
       </div>
     </div>
