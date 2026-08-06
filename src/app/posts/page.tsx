@@ -14,6 +14,7 @@ export default function PostsPage() {
   const [isDeleteToastVisible, setIsDeleteToastVisible] = useState(false);
   const [deleteToastKey, setDeleteToastKey] = useState(0);
   const deleteToastTimerRef = useRef<number | null>(null);
+  const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
 
   useEffect(() => {
     return () => {
@@ -46,10 +47,14 @@ export default function PostsPage() {
     }, 3000);
   };
 
+  const handleSideMenuToggle = () => {
+    setIsSideMenuOpen((current) => !current);
+  };
+
   return (
     <div className={styles.page}>
-      <PostHeader />
-      <SideMenu />
+      <PostHeader isMenuOpen={isSideMenuOpen} onMenuClick={handleSideMenuToggle} />
+      {isSideMenuOpen && <SideMenu onClose={() => setIsSideMenuOpen(false)} />}
       {isDeleteToastVisible && (<SuccessToast key={deleteToastKey} message="ポストを削除しました" />)}
       <main className={styles.contentArea}>
         <PostList onDeleteClick={handleDeleteClick} />
