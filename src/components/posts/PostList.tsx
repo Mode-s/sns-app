@@ -21,6 +21,13 @@ const mockPost: Post[] = [
     content: "今日の夕飯はトマトとナスの煮物。野菜を揃えて、少し長めに煮込むだけで味が染み込みすぎて美味しい。ご飯がすすむ。",
     createdAt: "2026-08-04T06:00:00+09:00",
   },
+  {
+    id: "3",
+    userName: "佐藤花子",
+    avatarUrl: "",
+    content: "今日の夕飯はトマトとナスの煮物。野菜を揃えて、少し長めに煮込むだけで味が染み込みすぎて美味しい。ご飯がすすむ。",
+    createdAt: "2026-08-04T06:00:00+09:00",
+  },
 ];
 
 export const PostList = ({onDeleteClick}: PostListProps) => {
