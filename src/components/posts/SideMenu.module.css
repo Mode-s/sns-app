@@ -9,17 +9,23 @@
 }
 
 .sideMenu {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 291px;
+  height: 100%;
   gap: 32px;
   padding: 20px 0 0 8px;
   background: #E4EFE7;
+  z-index: 1;
+  animation: sideMenuOpen 200ms ease-out;
 }
 
 .overlay {
-  flex: 1;
+  position: absolute;
+  inset: 0;
   background-color: #00000066;
+  animation: overlayOpen 200ms ease-out;
 }
 
 .userInfo {
@@ -39,4 +45,23 @@
 .logoutButton {
   font-size: 24px;
   line-height: 1;
+}
+
+@keyframes sideMenuOpen {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes overlayOpen {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
