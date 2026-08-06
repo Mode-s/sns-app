@@ -1,14 +1,24 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, type SubmitEvent } from 'react';
+import { useRouter } from 'next/navigation';
 import styles from './PostCreateForm.module.css';
 
 export const PostCreateForm = () => {
+  const router = useRouter();
   const [content, setContent] = useState('');
   const isPostDisabled = content.trim().length === 0;
 
+  const handleSubmit = (event: SubmitEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    if (isPostDisabled) return;
+
+    router.push('/posts?posted=true');
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <header className={styles.header}>
         <button className={styles.cancelButton} type="button">
           キャンセル
