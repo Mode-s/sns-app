@@ -2,6 +2,10 @@ import type { Post } from '@/types/type';
 import { PostItem } from './PostItem';
 import styles from './PostList.module.css';
 
+type PostListProps = {
+  onDeleteClick: () => void;
+};
+
 const mockPost: Post[] = [
   {
     id: '1',
@@ -19,11 +23,11 @@ const mockPost: Post[] = [
   },
 ];
 
-export const PostList = () => {
+export const PostList = ({onDeleteClick}: PostListProps) => {
   return (
     <section className={styles.postList}>
       {mockPost.map((post) => (
-        <PostItem key={post.id} post={post} />
+        <PostItem key={post.id} post={post} onDeleteClick={onDeleteClick} />
       ))}
     </section>
   )
